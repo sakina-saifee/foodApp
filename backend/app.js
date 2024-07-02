@@ -18,11 +18,9 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/api/v1/reservation')
+app.use('/api/v1/reservation', ReservationRouter);
 
 dbConnection();
-
-
 app.use(errorMiddleware);
 
 export default app;
